@@ -1,0 +1,425 @@
+/* -----------------------------
+   VARIABLES DE COLOR Y FUENTES
+--------------------------------*/
+:root {
+  --color-bg: #12100e;
+  --color-bg-alt: #1f1c17;
+  --color-accent: #dda15e;
+  --color-accent-dark: #bc6c25;
+  --color-text: #faf3e0;
+  --color-text-soft: #e5cba9;
+  --transition: all 0.3s ease;
+  --font-title: "Bebas Neue", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+/* -----------------------------
+   RESETEO BÁSICO
+--------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Imágenes y vídeos */
+img,
+video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* -----------------------------
+   NAVEGACIÓN
+--------------------------------*/
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(221, 161, 94);
+  z-index: 100;
+  border-bottom: 1px solid rgba(221, 161, 94, 0.3);
+  backdrop-filter: blur(6px);
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 50px;
+  width: auto;
+  transition: var(--transition);
+  filter: brightness(0.95);
+}
+
+/* Menú principal */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.menu li a:hover {
+  color: var(--color-accent);
+}
+
+/* Burger (solo visible en móvil) */
+.burger {
+  display: none;
+  font-size: 1.8rem;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+/* -----------------------------
+   HERO CON VÍDEO DE FONDO
+--------------------------------*/
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(18, 16, 14, 0.6);
+  z-index: -1;
+}
+
+.hero-content {
+  color: var(--color-text);
+  max-width: 700px;
+  padding: 2rem;
+  animation: fadeIn 1.5s ease;
+}
+
+.hero-content h1 {
+  font-family: var(--font-title);
+  font-size: 3.5rem;
+  letter-spacing: 3px;
+  color: var(--color-accent);
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  color: var(--color-text-soft);
+  margin: 1rem 0 2rem 0;
+}
+
+.btn-hero {
+  text-decoration: none;
+  background: var(--color-accent);
+  color: var(--color-bg);
+  padding: 0.8rem 1.8rem;
+  border-radius: 2rem;
+  font-weight: 700;
+  transition: var(--transition);
+}
+
+.btn-hero:hover {
+  background: var(--color-accent-dark);
+  color: var(--color-text);
+}
+
+/* Animación suave */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* -----------------------------
+   SECCIÓN LINE-UP
+--------------------------------*/
+.lineup {
+  padding: 6rem 2rem;
+  background-color: var(--color-bg-alt);
+  text-align: center;
+}
+
+.lineup h2 {
+  font-family: var(--font-title);
+  font-size: 2.5rem;
+  color: var(--color-accent);
+  margin-bottom: 2rem;
+}
+
+.artists {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.artist-card {
+  width: 250px;
+  background: #1a1714;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.artist-card img {
+  height: 250px;
+  object-fit: cover;
+}
+
+.artist-card h3 {
+  padding: 1rem;
+  font-family: var(--font-title);
+  color: var(--color-text-soft);
+}
+
+.artist-card:hover {
+  transform: scale(1.05);
+  border-color: var(--color-accent);
+}
+
+/* -----------------------------
+   SECCIÓN ENTRADAS
+--------------------------------*/
+.entradas {
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.entradas h2 {
+  font-family: var(--font-title);
+  font-size: 2.5rem;
+  color: var(--color-accent);
+  margin-bottom: 2rem;
+}
+
+.tickets {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.ticket-card {
+  background: var(--color-bg-alt);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  width: 260px;
+  padding: 1.5rem;
+  transition: var(--transition);
+}
+
+.ticket-card h3 {
+  color: var(--color-text);
+  font-family: var(--font-title);
+  font-size: 1.6rem;
+}
+
+.ticket-card p {
+  color: var(--color-text-soft);
+  margin: 1rem 0;
+  font-size: 0.95rem;
+}
+
+.price {
+  display: block;
+  color: var(--color-accent);
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.btn-comprar {
+  text-decoration: none;
+  background: var(--color-accent);
+  color: var(--color-bg);
+  padding: 0.6rem 1.5rem;
+  border-radius: 1.5rem;
+  transition: var(--transition);
+}
+
+.btn-comprar:hover {
+  background: var(--color-accent-dark);
+  color: var(--color-text);
+}
+
+/* -----------------------------
+   SECCIÓN UBICACIÓN
+--------------------------------*/
+.ubicacion {
+  padding: 6rem 2rem;
+  background-color: var(--color-bg-alt);
+  text-align: center;
+}
+
+.ubicacion h2 {
+  font-family: var(--font-title);
+  color: var(--color-accent);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.ubicacion p {
+  color: var(--color-text-soft);
+  margin-bottom: 2rem;
+}
+
+/* -----------------------------
+   SECCIÓN CONTACTO
+--------------------------------*/
+.contacto {
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.contacto h2 {
+  font-family: var(--font-title);
+  color: var(--color-accent);
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 500px;
+  margin: auto;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 5px;
+  background: #1a1714;
+  color: var(--color-text);
+  font-size: 1rem;
+}
+
+.btn-enviar {
+  background: var(--color-accent);
+  color: var(--color-bg);
+  padding: 0.7rem 1.8rem;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  font-weight: 700;
+  transition: var(--transition);
+}
+
+.btn-enviar:hover {
+  background: var(--color-accent-dark);
+  color: var(--color-text);
+}
+
+/* -----------------------------
+   FOOTER
+--------------------------------*/
+footer {
+  background: #0d0c0a;
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--color-text-soft);
+}
+
+.socials {
+  margin-top: 1rem;
+}
+
+.socials a {
+  color: var(--color-accent);
+  margin: 0 0.5rem;
+  font-size: 1.3rem;
+  transition: var(--transition);
+}
+
+.socials a:hover {
+  color: var(--color-accent-dark);
+}
+
+/* -----------------------------
+   MEDIA QUERIES
+--------------------------------*/
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    background: var(--color-bg);
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 60%;
+    text-align: right;
+    padding: 2rem;
+  }
+
+  .menu.menu-show {
+    display: flex;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .artists,
+  .tickets {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+}
