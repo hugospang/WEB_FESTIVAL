@@ -95,7 +95,7 @@ header {
 .burger {
   display: none;
   font-size: 1.8rem;
-  color: var(--color-text);
+  color: var(--color-bg);
   cursor: pointer;
 }
 
