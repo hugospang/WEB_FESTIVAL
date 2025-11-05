@@ -76,7 +76,8 @@ header {
 .menu {
   list-style: none;
   display: flex;
-  gap: 2rem;
+  font-size: 1rem;
+  gap: 4rem;
 }
 
 .menu li a {
@@ -87,7 +88,7 @@ header {
 }
 
 .menu li a:hover {
-  color: var(--color-accent);
+  color: var(--color-bg-alt);
 }
 
 /* Burger (solo visible en móvil) */
@@ -193,6 +194,10 @@ header {
   font-size: 2.5rem;
   color: var(--color-accent);
   margin-bottom: 2rem;
+}
+
+.lineup .artists + .artists {
+  margin-top: 2rem;
 }
 
 .artists {
