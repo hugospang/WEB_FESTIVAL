@@ -1,6 +1,4 @@
-/* -----------------------------
-   VARIABLES DE COLOR Y FUENTES
---------------------------------*/
+/* === VARIABLES DE COLOR Y FUENTES === */
 :root {
   --color-bg: #12100e;
   --color-bg-alt: #1f1c17;
@@ -13,9 +11,7 @@
   --font-body: "Inter", sans-serif;
 }
 
-/* -----------------------------
-   RESETEO BÁSICO
---------------------------------*/
+/* === RESETEO BÁSICO === */
 * {
   margin: 0;
   padding: 0;
@@ -24,14 +20,13 @@
 }
 
 body {
-  background-color: var(--color-bg);
+  background: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-body);
   line-height: 1.6;
   overflow-x: hidden;
 }
 
-/* Imágenes y vídeos */
 img,
 video {
   width: 100%;
@@ -39,18 +34,15 @@ video {
   display: block;
 }
 
-/* -----------------------------
-   NAVEGACIÓN
---------------------------------*/
+/* === HEADER / MENÚ === */
 header {
   position: fixed;
-  width: 100%;
   top: 0;
-  left: 0;
+  width: 100%;
   background: rgba(221, 161, 94);
-  z-index: 100;
   border-bottom: 1px solid rgba(221, 161, 94, 0.3);
   backdrop-filter: blur(6px);
+  z-index: 100;
 }
 
 .nav-bar {
@@ -58,66 +50,50 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  position: relative;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
 }
 
 .logo img {
   height: 50px;
-  width: auto;
-  transition: var(--transition);
   filter: brightness(0.95);
+  transition: var(--transition);
 }
 
-/* Menú principal */
 .menu {
   list-style: none;
   display: flex;
-  font-size: 1rem;
   gap: 2rem;
 }
 
-.menu li a {
-  text-decoration: none;
+.menu a {
   color: var(--color-text);
+  text-decoration: none;
   font-weight: 600;
   transition: var(--transition);
 }
 
-.menu li a:hover {
+.menu a:hover {
   color: var(--color-bg-alt);
 }
 
-.header-btn {
-  display: flex;
-  align-items: center;
-}
-
 .btn-tickets {
-  text-decoration: none;
   font-family: var(--font-title);
+  text-decoration: none;
   background: var(--color-bg);
   color: var(--color-text);
   padding: 0.7rem 2.8rem;
   border-radius: 30px;
-  font-weight: 700;
   font-size: 1.3rem;
+  font-weight: 700;
   letter-spacing: 1px;
-  transition: var(--transition);
   box-shadow: 0 0 10px rgba(221, 161, 94, 0.4);
+  transition: var(--transition);
 }
 
 .btn-tickets:hover {
   background: var(--color-accent-dark);
-  color: var(--color-text);
   box-shadow: 0 0 15px rgba(221, 161, 94, 0.6);
 }
 
-/* Burger (solo visible en móvil) */
 .burger {
   display: none;
   font-size: 1.8rem;
@@ -125,42 +101,32 @@ header {
   cursor: pointer;
 }
 
-/* -----------------------------
-   HERO CON VÍDEO DE FONDO
---------------------------------*/
+/* === HERO CON VÍDEO === */
 .hero {
   position: relative;
   height: 100vh;
-  width: 100%;
-  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  overflow: hidden;
 }
 
 .video-bg {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   object-fit: cover;
   z-index: -2;
 }
 
 .overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: rgba(18, 16, 14, 0.6);
   z-index: -1;
 }
 
 .hero-content {
-  color: var(--color-text);
   max-width: 700px;
   padding: 2rem;
   animation: fadeIn 1.5s ease;
@@ -169,19 +135,19 @@ header {
 .hero-content h1 {
   font-family: var(--font-title);
   font-size: 3.5rem;
-  letter-spacing: 3px;
   color: var(--color-accent);
+  letter-spacing: 3px;
 }
 
 .hero-content p {
-  font-size: 1.2rem;
   color: var(--color-text-soft);
-  margin: 1rem 0 2rem 0;
+  margin: 1rem 0 2rem;
+  font-size: 1.2rem;
 }
 
 .btn-hero {
-  text-decoration: none;
   background: var(--color-accent);
+  text-decoration: none;
   color: var(--color-bg);
   padding: 0.8rem 1.8rem;
   border-radius: 2rem;
@@ -191,12 +157,10 @@ header {
 
 .btn-hero:hover {
   background: var(--color-accent-dark);
-  color: var(--color-text);
   transform: scale(1.08);
   box-shadow: 0 0 15px rgba(221, 161, 94, 0.6);
 }
 
-/* Animación suave */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -208,12 +172,10 @@ header {
   }
 }
 
-/* -----------------------------
-   SECCIÓN LINE-UP
---------------------------------*/
+/* === LINE-UP === */
 .lineup {
   padding: 6rem 2rem;
-  background-color: var(--color-bg-alt);
+  background: var(--color-bg-alt);
   text-align: center;
 }
 
@@ -224,15 +186,12 @@ header {
   margin-bottom: 2rem;
 }
 
-.lineup .artists + .artists {
-  margin-top: 2rem;
-}
-
 .artists {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
+  margin-top: 2rem;
 }
 
 .artist-card {
@@ -258,11 +217,10 @@ header {
 .artist-card:hover {
   transform: scale(1.05);
   border-color: var(--color-accent);
+  box-shadow: 0 0 15px rgba(221, 161, 94, 0.6);
 }
 
-/* -----------------------------
-   SECCIÓN ENTRADAS
---------------------------------*/
+/* === ENTRADAS === */
 .entradas {
   padding: 6rem 2rem;
   text-align: center;
@@ -292,8 +250,8 @@ header {
 }
 
 .ticket-card h3 {
-  color: var(--color-text);
   font-family: var(--font-title);
+  color: var(--color-text);
   font-size: 1.6rem;
 }
 
@@ -312,26 +270,23 @@ header {
 }
 
 .btn-comprar {
-  text-decoration: none;
   background: var(--color-accent);
   color: var(--color-bg);
   padding: 0.6rem 1.5rem;
   border-radius: 1.5rem;
+  text-decoration: none;
   transition: var(--transition);
 }
 
 .btn-comprar:hover {
   background: var(--color-accent-dark);
-  color: var(--color-text);
   box-shadow: 0 0 15px rgba(221, 161, 94, 0.6);
 }
 
-/* -----------------------------
-   SECCIÓN UBICACIÓN
---------------------------------*/
+/* === UBICACIÓN === */
 .ubicacion {
   padding: 6rem 2rem;
-  background-color: var(--color-bg-alt);
+  background: var(--color-bg-alt);
   text-align: center;
 }
 
@@ -339,17 +294,41 @@ header {
   font-family: var(--font-title);
   color: var(--color-accent);
   font-size: 2.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2.5rem;
 }
 
-.ubicacion p {
-  color: var(--color-text-soft);
+.ubicacion-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
   margin-bottom: 2rem;
 }
 
-/* -----------------------------
-   SECCIÓN CONTACTO
---------------------------------*/
+.ubicacion-texto {
+  flex: 1;
+  min-width: 300px;
+  color: var(--color-text-soft);
+  text-align: justify;
+}
+
+.ubicacion-imagen {
+  flex: 0.9;
+  min-width: 300px;
+}
+
+.ubicacion-imagen img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(221, 161, 94, 0.2);
+}
+
+.ubicacion-mapa {
+  margin-top: 4rem;
+}
+
+/* === CONTACTO === */
 .contacto {
   padding: 6rem 2rem;
   text-align: center;
@@ -388,20 +367,17 @@ textarea {
   padding: 0.7rem 1.8rem;
   border: none;
   border-radius: 2rem;
-  cursor: pointer;
   font-weight: 700;
+  cursor: pointer;
   transition: var(--transition);
 }
 
 .btn-enviar:hover {
   background: var(--color-accent-dark);
-  color: var(--color-text);
   box-shadow: 0 0 15px rgba(221, 161, 94, 0.6);
 }
 
-/* -----------------------------
-   FOOTER
---------------------------------*/
+/* === FOOTER === */
 footer {
   background: #0d0c0a;
   text-align: center;
@@ -424,9 +400,7 @@ footer {
   color: var(--color-accent-dark);
 }
 
-/* -----------------------------
-   MEDIA QUERIES
---------------------------------*/
+/* === MEDIA QUERIES === */
 @media (max-width: 768px) {
   .menu {
     display: none;
@@ -436,8 +410,8 @@ footer {
     top: 70px;
     right: 0;
     width: 60%;
-    text-align: right;
     padding: 2rem;
+    text-align: right;
   }
 
   .menu.menu-show {
@@ -456,5 +430,13 @@ footer {
 
   .hero-content h1 {
     font-size: 2.5rem;
+  }
+
+  .ubicacion-content {
+    flex-direction: column;
+  }
+
+  .ubicacion-texto {
+    text-align: center;
   }
 }
