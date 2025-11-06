@@ -1,41 +1,54 @@
-/* ===== 1. MENÚ BURGER PARA MÓVIL ===== */
+/* ===============================
+   MONEGROS DESERT FESTIVAL 2026
+   Interactividad principal
+================================ */
+
+/* ====== 1. MENÚ HAMBURGUESA ====== */
 const burger = document.querySelector(".burger");
+const burgerIcon = burger.querySelector("i");
 const menu = document.querySelector(".menu");
 
 burger.addEventListener("click", () => {
-  menu.classList.toggle("menu-show"); // Activa o desactiva el menú
-  burger.classList.toggle("active"); // Cambia el icono si quieres animarlo
+  menu.classList.toggle("menu-show"); // muestra/oculta el menú
+
+  // Cambia el icono fa-bars ↔ fa-times
+  if (menu.classList.contains("menu-show")) {
+    burgerIcon.classList.remove("fa-bars");
+    burgerIcon.classList.add("fa-times");
+  } else {
+    burgerIcon.classList.remove("fa-times");
+    burgerIcon.classList.add("fa-bars");
+  }
 });
 
-/* ===== 2. CERRAR MENÚ AL HACER CLIC EN UN ENLACE ===== */
-const menuLinks = document.querySelectorAll(".menu a");
-
-menuLinks.forEach((link) => {
+/* Cierra el menú al hacer clic en un enlace */
+document.querySelectorAll(".menu a").forEach((link) => {
   link.addEventListener("click", () => {
     if (menu.classList.contains("menu-show")) {
       menu.classList.remove("menu-show");
-      burger.classList.remove("active");
+      burgerIcon.classList.remove("fa-times");
+      burgerIcon.classList.add("fa-bars");
     }
   });
 });
 
-/* ===== 3. EFECTO EN EL HEADER AL HACER SCROLL ===== */
+/* ====== 2. EFECTO DE SCROLL EN HEADER ====== */
 window.addEventListener("scroll", () => {
   const header = document.querySelector("header");
   if (window.scrollY > 80) {
     header.style.background = "hsla(30, 65%, 39%, 0.90)";
     header.style.transition = "0.4s";
   } else {
-    header.style.background = "rgba(221,161,94)";
+    header.style.background = "rgba(221, 161, 94)";
   }
 });
 
-/* ===== 4. VALIDACIÓN SIMPLE DEL FORMULARIO ===== */
+/* ====== 3. VALIDACIÓN SIMPLE DEL FORMULARIO ====== */
 const form = document.getElementById("form-contacto");
 
 if (form) {
   form.addEventListener("submit", (e) => {
-    e.preventDefault(); // Evita el envío real (no hay backend)
+    e.preventDefault();
 
     const nombre = document.getElementById("nombre").value.trim();
     const email = document.getElementById("email").value.trim();
@@ -56,7 +69,6 @@ if (form) {
   });
 }
 
-// Función auxiliar para validar el formato de email
 function validarEmail(email) {
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return regex.test(email);

@@ -422,6 +422,15 @@ footer {
     display: block;
   }
 
+  .burger i {
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+
+  .burger:hover i {
+    transform: scale(1.2);
+    color: var(--color-accent-dark);
+  }
+
   .artists,
   .tickets {
     flex-direction: column;
