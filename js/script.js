@@ -1,28 +1,23 @@
-/* ===============================
-   MONEGROS DESERT FESTIVAL 2026
-   Interactividad principal
-================================ */
-
-/* ====== 1. MENÚ HAMBURGUESA ====== */
+// MENÚ HAMBURGUESA
 const burger = document.querySelector(".burger");
 const burgerIcon = burger.querySelector("i");
 const menu = document.querySelector(".menu");
 
-// Abrir / cerrar menú móvil
+// Abrir / cerrar menú
 burger.addEventListener("click", () => {
-  menu.classList.toggle("menu-show"); // muestra/oculta el menú
+  menu.classList.toggle("menu-show");
 
   const isOpen = menu.classList.contains("menu-show");
 
-  // Cambiar icono fa-bars ↔ fa-times
+  // Cambiar icono
   burgerIcon.classList.toggle("fa-bars", !isOpen);
   burgerIcon.classList.toggle("fa-times", isOpen);
 
-  // Bloquear/desbloquear scroll del body
+  // Bloquear/desbloquear scroll body
   document.body.style.overflow = isOpen ? "hidden" : "";
 });
 
-// Cerrar menú al hacer clic en un enlace
+// Cerrar menú al hacer clic
 document.querySelectorAll(".menu a").forEach((link) => {
   link.addEventListener("click", () => {
     if (menu.classList.contains("menu-show")) {
@@ -34,7 +29,7 @@ document.querySelectorAll(".menu a").forEach((link) => {
   });
 });
 
-/* ====== 2. EFECTO DE SCROLL EN HEADER ====== */
+// SCROLL HEADER
 window.addEventListener("scroll", () => {
   const header = document.querySelector("header");
   if (window.scrollY > 80) {
@@ -45,7 +40,7 @@ window.addEventListener("scroll", () => {
   }
 });
 
-/* ====== 3. VALIDACIÓN SIMPLE DEL FORMULARIO ====== */
+// FORMULARIO
 const form = document.getElementById("form-contacto");
 
 if (form) {
@@ -71,13 +66,13 @@ if (form) {
   });
 }
 
-// Función auxiliar de validación
+// Función auxiliar validación
 function validarEmail(email) {
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return regex.test(email);
 }
 
-// --- SCRIPT LOCAL PARA LA PÁGINA DE ENTRADAS ---
+// PÁGINA DE ENTRADAS
 const cards = document.querySelectorAll(".compra-card");
 const total = document.getElementById("precio-total");
 
@@ -112,7 +107,7 @@ cards.forEach((card) => {
   }
 });
 
-/* ====== 5. POPUP DE CONFIRMACIÓN DE COMPRA ====== */
+// POPUP CONFIRMACIÓN DE COMPRA
 document.addEventListener("DOMContentLoaded", () => {
   const btnConfirmar = document.getElementById("btn-confirmar");
 
@@ -151,6 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
       overlay.remove();
       popup.remove();
       document.body.style.overflow = "";
+      window.location.href = "index.html";
     }
   }
 });

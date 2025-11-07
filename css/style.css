@@ -1,4 +1,4 @@
-/* === VARIABLES DE COLOR Y FUENTES === */
+/* VARIABLES */
 :root {
   --color-bg: #12100e;
   --color-bg-alt: #1f1c17;
@@ -11,7 +11,7 @@
   --font-body: "Inter", sans-serif;
 }
 
-/* === RESETEO BÁSICO === */
+/* RESETEO */
 * {
   margin: 0;
   padding: 0;
@@ -34,7 +34,7 @@ video {
   display: block;
 }
 
-/* === HEADER / MENÚ === */
+/* HEADER / MENÚ */
 header {
   position: fixed;
   top: 0;
@@ -101,7 +101,7 @@ header {
   cursor: pointer;
 }
 
-/* === HERO CON VÍDEO === */
+/* HERO VÍDEO */
 .hero {
   position: relative;
   height: 100vh;
@@ -172,7 +172,7 @@ header {
   }
 }
 
-/* === LINE-UP === */
+/* LINE-UP */
 .lineup {
   padding: 6rem 2rem;
   background: var(--color-bg-alt);
@@ -220,7 +220,7 @@ header {
   box-shadow: 0 0 15px rgba(221, 161, 94, 0.6);
 }
 
-/* === ENTRADAS === */
+/* ENTRADAS */
 .entradas {
   padding: 6rem 2rem;
   text-align: center;
@@ -283,7 +283,7 @@ header {
   box-shadow: 0 0 15px rgba(221, 161, 94, 0.6);
 }
 
-/* === UBICACIÓN === */
+/* UBICACIÓN */
 .ubicacion {
   padding: 6rem 2rem;
   background: var(--color-bg-alt);
@@ -328,7 +328,7 @@ header {
   margin-top: 4rem;
 }
 
-/* === CONTACTO === */
+/* CONTACTO */
 .contacto {
   padding: 6rem 2rem;
   text-align: center;
@@ -377,7 +377,7 @@ textarea {
   box-shadow: 0 0 15px rgba(221, 161, 94, 0.6);
 }
 
-/* === FOOTER === */
+/* FOOTER */
 footer {
   background: #0d0c0a;
   text-align: center;
@@ -400,7 +400,7 @@ footer {
   color: var(--color-accent-dark);
 }
 
-/* === PÁGINA DE COMPRA DE ENTRADAS === */
+/* COMPRA DE ENTRADAS */
 .compra {
   padding: 7rem 2rem 5rem;
   text-align: center;
@@ -470,7 +470,7 @@ footer {
   display: inline-block;
 }
 
-/* === POPUP DE CONFIRMACIÓN DE COMPRA === */
+/* POPUP CONFIRMACIÓN COMPRA */
 .popup-overlay {
   position: fixed;
   inset: 0;
@@ -534,7 +534,7 @@ footer {
   }
 }
 
-/* === MEDIA QUERIES === */
+/* MEDIA QUERIES */
 @media (max-width: 768px) {
   .menu {
     position: fixed;
@@ -577,8 +577,22 @@ footer {
     align-items: center;
   }
 
-  .hero-content h1 {
-    font-size: 2.5rem;
+  .hero {
+    height: 100vh;
+  }
+
+  .video-bg {
+    object-fit: cover;
+    width: 100%;
+    height: 120vh;
+    object-position: center top;
+    transform: scale(1.2);
+    transition: transform 0.4s ease;
+  }
+
+  .hero-content {
+    padding: 1.5rem;
+    max-width: 90%;
   }
 
   .ubicacion-content {
