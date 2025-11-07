@@ -400,22 +400,226 @@ footer {
   color: var(--color-accent-dark);
 }
 
+/* === PÁGINA DE COMPRA DE ENTRADAS === */
+.compra {
+  padding: 7rem 2rem 5rem;
+  text-align: center;
+}
+
+.compra h1 {
+  font-family: var(--font-title);
+  font-size: 2.8rem;
+  color: var(--color-accent);
+  margin-bottom: 0.5rem;
+}
+
+.compra p {
+  color: var(--color-text-soft);
+  margin-bottom: 2rem;
+}
+
+.compra-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.compra-card {
+  text-align: center;
+}
+
+.contador {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.btn-sumar,
+.btn-restar {
+  background: var(--color-accent);
+  border: none;
+  border-radius: 50%;
+  color: var(--color-bg);
+  width: 35px;
+  height: 35px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-sumar:hover,
+.btn-restar:hover {
+  background: var(--color-accent-dark);
+}
+
+.cantidad {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--color-text);
+}
+
+.total-compra {
+  background: var(--color-bg-alt);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(221, 161, 94, 0.2);
+  display: inline-block;
+}
+
+/* === POPUP DE CONFIRMACIÓN DE COMPRA === */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 200;
+  animation: fadeIn 0.25s ease;
+}
+
+.popup-compra {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--color-bg-alt);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(221, 161, 94, 0.4);
+  text-align: center;
+  z-index: 201;
+  max-width: 400px;
+  width: 90%;
+  animation: scaleIn 0.25s ease;
+}
+
+.popup-compra h2 {
+  font-family: var(--font-title);
+  color: var(--color-accent);
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.popup-compra p {
+  color: var(--color-text-soft);
+  margin-bottom: 1.5rem;
+}
+
+.btn-cerrar-popup {
+  background: var(--color-accent);
+  color: var(--color-bg);
+  padding: 0.7rem 1.8rem;
+  border: none;
+  border-radius: 2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-cerrar-popup:hover {
+  background: var(--color-accent-dark);
+  box-shadow: 0 0 15px rgba(221, 161, 94, 0.6);
+}
+
+@keyframes scaleIn {
+  from {
+    transform: translate(-50%, -50%) scale(0.85);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+/* === POPUP DE CONFIRMACIÓN DE COMPRA === */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 200;
+  animation: fadeIn 0.25s ease;
+}
+
+.popup-compra {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--color-bg-alt);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(221, 161, 94, 0.4);
+  text-align: center;
+  z-index: 201;
+  max-width: 400px;
+  width: 90%;
+  animation: scaleIn 0.25s ease;
+}
+
+.popup-compra h2 {
+  font-family: var(--font-title);
+  color: var(--color-accent);
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.popup-compra p {
+  color: var(--color-text-soft);
+  margin-bottom: 1.5rem;
+}
+
+.btn-cerrar-popup {
+  background: var(--color-accent);
+  color: var(--color-bg);
+  padding: 0.7rem 1.8rem;
+  border: none;
+  border-radius: 2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-cerrar-popup:hover {
+  background: var(--color-accent-dark);
+  box-shadow: 0 0 15px rgba(221, 161, 94, 0.6);
+}
+
+@keyframes scaleIn {
+  from {
+    transform: translate(-50%, -50%) scale(0.85);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
 /* === MEDIA QUERIES === */
 @media (max-width: 768px) {
   .menu {
-    display: none;
-    flex-direction: column;
-    background: var(--color-bg);
-    position: absolute;
+    position: fixed;
     top: 70px;
+    left: 0;
     right: 0;
-    width: 60%;
-    padding: 2rem;
-    text-align: right;
+    height: calc(100vh - 70px);
+    background: var(--color-bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1.2rem;
+    padding: 1.5rem 2rem;
+    transform: translateY(-110%);
+    transition: transform 0.3s ease;
+    z-index: 99;
+    text-align: left;
   }
 
   .menu.menu-show {
-    display: flex;
+    transform: translateY(0);
   }
 
   .burger {
